@@ -85,11 +85,12 @@ unvPort = np.c_[Sg, unvPort]
 verPort = np.c_[Sg, verPort]
 
 # Plot
-pl.plot(unvPort[:, 0], unvPort[:, 1], color = "red", linewidth = 2)
-pl.plot(verPort[:, 0], verPort[:, 1], color = "blue", linewidth = 2, linestyle="--")
+pl.plot(unvPort[:, 0], unvPort[:, 1], color = "red", linewidth = 2, label="Non-insured")
+pl.plot(verPort[:, 0], verPort[:, 1], color = "blue", linewidth = 2, linestyle="--", label="Insured")
 pl.xlabel("Stock Price") 
 pl.ylabel("Portfolio Value")
-pl.title("Insured (blue) vs Non-insured (red)")
+pl.title("Insured vs Non-insured portfolio")
+pl.legend()
 
 # Table output
 ustockp = unvPort

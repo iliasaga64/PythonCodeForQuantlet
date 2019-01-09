@@ -46,7 +46,9 @@ pl.plot([s1, s1],[x[s1] - 3 * sigma, x[s1] + 3 * sigma], color = "black", linewi
 pl.plot([n, n],[x[s1] - 3 * sigma, x[s1] + 3 * sigma], color = "black", linewidth = 0.5)
 pl.plot(f / dt, ndata, color="red", linewidth=1)
 pl.plot([s1, n],[x[s1], x[s1]], color = "black", linewidth = 0.5, linestyle = "--")
-
+pl.xlabel("Iteration number") 
+pl.ylabel("Value")
+pl.title("Wiener Process")
 # Drawing the red area
 a   = mu - sigma
 b   = mu + sigma

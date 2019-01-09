@@ -56,6 +56,6 @@ while t >= 1e-05:
     k       = k - fk / fkk                                                                       # new k
     t       = k - k0                                                                             # difference 
 
-print("The exercise price applying NEWTON method = " + str(k))
+print("The exercise price applying NEWTON method = " + str("%.4f" % k))
 
-print("The BS put option price = " + str(pk)) 
+print("The BS put option price = " + str("%.4f" % pk))

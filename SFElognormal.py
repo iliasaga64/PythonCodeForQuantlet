@@ -2,6 +2,7 @@ import math
 import numpy as np
 from scipy.stats import norm
 import matplotlib.pyplot as pl
+import matplotlib.patches as mpatches
  
 # Parameter settings
 print("Please input Mean mu and Variance var. Numbers should be separated with spaces. Default is 0 and 1")
@@ -27,3 +28,9 @@ ln          = norm.pdf(np.log(lognormaxis), mu, var)
 # Plot
 pl.plot(normaxis, n, color = "blue", linewidth = 3)
 pl.plot(lognormaxis, ln, color = "red", linewidth = 3, linestyle = "--")
+pl.title("Distribution of lognormal and normal processes")
+rp = mpatches.Patch(color = 'red', label = 'Lognormal')
+bp = mpatches.Patch(color = 'blue', label = 'Normal')
+pl.legend(handles = [bp, rp])
+pl.xlabel("x") 
+pl.ylabel("f(x)")

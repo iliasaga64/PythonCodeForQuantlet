@@ -46,6 +46,6 @@ pl.xlabel("Time")
 pl.ylabel("Process")
 pl.title(str(k) + " Binomial Processes with p = " + str(p))
 
-pl.plot(s_1, linewidth = 0.5, color = (0.6, 0.6, 0.6))       # upper confidence interval boundary
-pl.plot(s_2, linewidth = 0.5, color = (0.6, 0.6, 0.6))       # lower confidence interval boundary
-pl.plot(trend, linewidth = 2.5, color = "black")             # trend line 
+pl.plot(s_1, linewidth = 0.5, color = (0.6, 0.6, 0.6))   # upper confidence interval boundary
+pl.plot(s_2, linewidth = 0.5, color = (0.6, 0.6, 0.6))   # lower confidence interval boundary
+pl.plot(trend, linewidth = 2.5, color = "black")         # trend line 

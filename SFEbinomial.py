@@ -22,15 +22,15 @@ y  = binom.pmf(x.astype(int), n, p)
 f1 = pl.bar(x, y, color = "blue", width = 0.3)
 pl.xlabel("x") 
 pl.ylabel("f(x)")
-pl.title("Binomial Distribution")
+pl.title("Binomial Distribution - PMF")
 pl.show(f1)
 z  = binom.cdf(x, n, p)
 pl.subplot(111)
 f2 = pl.step(x, z, color = "red", linewidth = 3)
 pl.xlabel("x") 
 pl.ylabel("F(x)")
+pl.title("Binomial Distribution - CDF")
 pl.show(f2)
-
 
 # Parameter settings
 print("Please input Value x, Probability p and Number n. Numbers should be separated with spaces. Default is 5, 0.5 and 15")
@@ -48,8 +48,8 @@ p1 = para1[1] # probability
 n1 = para1[2] # number n
 
 print("Binomial distribution for the specified x, p, n")
-print("P(X=x) = f(x) = " + str(binom.pmf(x1, n1, p1)))
-print("P(X<=x) = F(x) = " + str(binom.cdf(x1, n1, p1)))
-print("P(X>=x) = 1-F(x-1) = " + str(1 - binom.cdf(x1 - 1, n1, p1)))
-print("P(X<x) = P(X<=x) - P(X=x) = P(X<=x-1) = F(x-1) = " + str(binom.cdf(x1 - 1, n1, p1)))
-print("P(X>x) = P(X>=x) - P(X=x) = P(X>=x+1) = 1 - F(x) = " + str(1 - binom.cdf(x1, n1, p1)))
+print("P(X=x) = f(x) = " + str("%.4f" % binom.pmf(x1, n1, p1)))
+print("P(X<=x) = F(x) = " + str("%.4f" % binom.cdf(x1, n1, p1)))
+print("P(X>=x) = 1-F(x-1) = " + str("%.4f" % (1 - binom.cdf(x1 - 1, n1, p1))))
+print("P(X<x) = P(X<=x) - P(X=x) = P(X<=x-1) = F(x-1) = " + str("%.4f" % binom.cdf(x1 - 1, n1, p1)))
+print("P(X>x) = P(X>=x) - P(X=x) = P(X>=x+1) = 1 - F(x) = " + str("%.4f" % (1 - binom.cdf(x1, n1, p1))))

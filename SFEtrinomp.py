@@ -23,18 +23,18 @@ if p + q > 1 or p + q < 0:
     raise ValueError("p and q must be smaller than 1 and in sum larger than 0 but smaller than 1!")
     
 # Main simulation
-u     = 1           # n of t increments Z_1,...,Z_t take value u
-d     = 1           # m of t increments Z_1,...,Z_t take value d
+u     = 1  # n of t increments Z_1,...,Z_t take value u
+d     = 1  # m of t increments Z_1,...,Z_t take value d
 t     = np.linspace(1, n, n)
 trend = t * (p * u - q * d)
 std   = np.sqrt(t * (p * (1 - p) + q * (1 - q) + 2 * p * q * u * d))
-s1    = trend + 2 * std                     # upper confidence band
-s2    = trend - 2 * std                     # lower confidence band
-z     = uniform.rvs(size = (k,n), random_state = 1)           # uniform random numbers
+s1    = trend + 2 * std                              # upper confidence band
+s2    = trend - 2 * std                              # lower confidence band
+z     = uniform.rvs(size = (k,n), random_state = 1)  # uniform random numbers
 z     = (-1) * (z < q) + (z > (1 - p))
 x     = np.cumsum(z, axis = 1)
 
-# Plot first trajectory    
+# Plot trajectories    
 for i in range(k):
     pl.plot(x[i, :], color = (uniform.rvs(random_state = i), uniform.rvs(random_state = i + 1000), uniform.rvs(random_state = i + 2000)), linewidth = 2.5)  # all other trajectories
 pl.xlabel("Time") 
@@ -43,4 +43,4 @@ pl.title(str(k) + " Trinomial Processes with p = " + str(p) + " and q = " + str(
     
 pl.plot(s1, linewidth = 0.5, color = (0.6, 0.6, 0.6))       # upper confidence interval boundary
 pl.plot(s2, linewidth = 0.5, color = (0.6, 0.6, 0.6))       # lower confidence interval boundary
-pl.plot(trend, linewidth = 2.5, color = "black")          # trend line 
+pl.plot(trend, linewidth = 2.5, color = "black")            # trend line
